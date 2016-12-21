@@ -22,7 +22,7 @@ import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class Retr0LruDiskCacheUtil {
+public class Retr0DiskLruCacheUtil {
 
 
     private DiskLruCache mDiskLruCache ;

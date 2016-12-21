@@ -3,8 +3,6 @@ package com.zbd.disklrutest;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,14 +14,11 @@ import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-
-import static android.R.attr.key;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private static final long DISK_CACHE_SIZE = 1024 * 1024 * 50;//50MB
 
     String imageUrl = "http://img.my.csdn.net/uploads/201309/01/1378037235_7476.jpg";
-    Retr0LruDiskCacheUtil retr0LruDiskCacheUtil;
+    Retr0DiskLruCacheUtil retr0DiskLruCacheUtil;
 
 
 
@@ -47,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         imageView = (ImageView) findViewById(R.id.imgV);
-        Retr0LruDiskCacheUtil r = new Retr0LruDiskCacheUtil();
+        Retr0DiskLruCacheUtil r = new Retr0DiskLruCacheUtil();
         r.setImageLru(imageView,imageUrl,MainActivity.this);
 
 
