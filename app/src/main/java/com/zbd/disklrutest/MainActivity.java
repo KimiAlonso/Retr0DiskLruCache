@@ -6,6 +6,8 @@ import android.content.pm.PackageManager;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.jakewharton.disklrucache.DiskLruCache;
@@ -20,6 +22,9 @@ import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import static android.view.View.HAPTIC_FEEDBACK_ENABLED;
+import static android.view.View.SOUND_EFFECTS_ENABLED;
+
 public class MainActivity extends AppCompatActivity {
 
     DiskLruCache mDiskLruCache ;
@@ -31,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
     String imageUrl = "http://img.my.csdn.net/uploads/201309/01/1378037235_7476.jpg";
     Retr0DiskLruCacheUtil retr0DiskLruCacheUtil;
+    int a = SOUND_EFFECTS_ENABLED | HAPTIC_FEEDBACK_ENABLED;
+    String TAG = "TEST";
 
 
 
@@ -44,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         imageView = (ImageView) findViewById(R.id.imgV);
         Retr0DiskLruCacheUtil r = new Retr0DiskLruCacheUtil();
         r.setImageLru(imageView,imageUrl,MainActivity.this);
+        Log.e(TAG, "onCreate: "+a);
 
 
 
